@@ -27,9 +27,13 @@ public final class StateMachineManager {
     }
 
     private static void sendEvent(StateMachine<String, String> stateMachine, Message<String> message) {
+
         stateMachine.sendEvent(Mono.just(message)).subscribe(
                 result -> log.info("Result: " + result),
-                error -> log.error("Error: " + error),
+                error -> {
+                    log.error("Error: " + error);
+                    throw new RuntimeException(error);
+                },
                 () -> log.info("State Machine Completed")
         );
     }
