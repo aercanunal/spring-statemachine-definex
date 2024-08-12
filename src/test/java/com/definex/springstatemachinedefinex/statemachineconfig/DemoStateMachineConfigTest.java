@@ -21,7 +21,7 @@ class DemoStateMachineConfigTest {
 
     @BeforeEach
     public void setUp() {
-        stateMachine.start();
+        stateMachine.startReactively().block();
     }
 
     @Test
@@ -40,6 +40,6 @@ class DemoStateMachineConfigTest {
 
     @AfterEach
     public void tearDown() {
-        stateMachine.stop();
+        stateMachine.stopReactively().block();
     }
 }
