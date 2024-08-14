@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_Y7m4oFl7Ee-hWLMPTtNMZw" name="order-statemachine">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_ZBihgFl7Ee-hWLMPTtNMZw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_Y8g3kFl7Ee-hWLMPTtNMZw" name="Order - State Machine">
+    <nestedClassifier xmi:type="uml:Signal" xmi:id="_VJIP0FobEe-hWLMPTtNMZw" name="START"/>
+    <nestedClassifier xmi:type="uml:Signal" xmi:id="_YcNxMFobEe-hWLMPTtNMZw" name="GO_TO_PAYMENT"/>
+    <nestedClassifier xmi:type="uml:Signal" xmi:id="_cGK6cFobEe-hWLMPTtNMZw" name="COMPLATE"/>
+    <nestedClassifier xmi:type="uml:Signal" xmi:id="_jxShIFodEe-hWLMPTtNMZw" name="EXCEPTION_OCCURRED"/>
+    <nestedClassifier xmi:type="uml:Signal" xmi:id="_kUVlAFo3Ee-hWLMPTtNMZw" name="ORDER"/>
+    <region xmi:type="uml:Region" xmi:id="_Y9S6sFl7Ee-hWLMPTtNMZw" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_kcNGoFl-Ee-hWLMPTtNMZw" source="__Xn2IFl8Ee-hWLMPTtNMZw" target="_Aeia4Fl9Ee-hWLMPTtNMZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_l_HD0Fl-Ee-hWLMPTtNMZw" source="_Aeia4Fl9Ee-hWLMPTtNMZw" target="_EiAQUFl9Ee-hWLMPTtNMZw">
+        <trigger xmi:type="uml:Trigger" xmi:id="_6Eox8FoeEe-hWLMPTtNMZw" event="_n2aG8FoeEe-hWLMPTtNMZw"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_Xnd98FmAEe-hWLMPTtNMZw" guard="_UlEjsFofEe-hWLMPTtNMZw" source="_EiAQUFl9Ee-hWLMPTtNMZw" target="_UoGxMFl9Ee-hWLMPTtNMZw">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_UlEjsFofEe-hWLMPTtNMZw">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_UlEjsVofEe-hWLMPTtNMZw">
+            <language>bean</language>
+            <body>validationOrderGuard</body>
+          </specification>
+        </ownedRule>
+        <trigger xmi:type="uml:Trigger" xmi:id="_p7R_YFo3Ee-hWLMPTtNMZw" event="_l5lEgFo3Ee-hWLMPTtNMZw"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_cOmhIFmAEe-hWLMPTtNMZw" source="_UoGxMFl9Ee-hWLMPTtNMZw" target="_aaYxgFmAEe-hWLMPTtNMZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_I6eIkFmBEe-hWLMPTtNMZw" guard="_TZNfcFodEe-hWLMPTtNMZw" source="_aaYxgFmAEe-hWLMPTtNMZw" target="_ZgmKIFl9Ee-hWLMPTtNMZw">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_TZNfcFodEe-hWLMPTtNMZw">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_TZNfcVodEe-hWLMPTtNMZw">
+            <language>bean</language>
+            <body>isLowerThenMinCountGuard</body>
+          </specification>
+        </ownedRule>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_Kmm6QFmBEe-hWLMPTtNMZw" source="_aaYxgFmAEe-hWLMPTtNMZw" target="_arMfkFl-Ee-hWLMPTtNMZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_NlHSwFmBEe-hWLMPTtNMZw" source="_arMfkFl-Ee-hWLMPTtNMZw" target="_c5VyIFl-Ee-hWLMPTtNMZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_OHfAAFmBEe-hWLMPTtNMZw" source="_c5VyIFl-Ee-hWLMPTtNMZw" target="_iDOdEFl-Ee-hWLMPTtNMZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_m1BCwFobEe-hWLMPTtNMZw" source="_ZgmKIFl9Ee-hWLMPTtNMZw" target="_arMfkFl-Ee-hWLMPTtNMZw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_WQcLQFodEe-hWLMPTtNMZw" source="_UoGxMFl9Ee-hWLMPTtNMZw" target="_EiAQUFl9Ee-hWLMPTtNMZw">
+        <trigger xmi:type="uml:Trigger" xmi:id="_8uZCcFoeEe-hWLMPTtNMZw" event="_2ABtAFoeEe-hWLMPTtNMZw"/>
+      </transition>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="__Xn2IFl8Ee-hWLMPTtNMZw" name="INITIAL"/>
+      <subvertex xmi:type="uml:State" xmi:id="_Aeia4Fl9Ee-hWLMPTtNMZw" name="STARTUP"/>
+      <subvertex xmi:type="uml:State" xmi:id="_EiAQUFl9Ee-hWLMPTtNMZw" name="PREORDER">
+        <entry xmi:type="uml:OpaqueBehavior" xmi:id="_O9BykFoeEe-hWLMPTtNMZw" name="PRE_ORDER_ACTION">
+          <language>bean</language>
+          <body>preOrderAction</body>
+        </entry>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_UoGxMFl9Ee-hWLMPTtNMZw" name="DO_PAYMENT">
+        <entry xmi:type="uml:OpaqueBehavior" xmi:id="_Skx8YFoeEe-hWLMPTtNMZw" name="DO_PAYMENT_ACTION">
+          <language>bean</language>
+          <body>doPaymentAction</body>
+        </entry>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_ZgmKIFl9Ee-hWLMPTtNMZw" name="MIN_LIMIT_COUNT_ALERT">
+        <entry xmi:type="uml:OpaqueBehavior" xmi:id="_ahmB8FoeEe-hWLMPTtNMZw" name="MIN_LIMIT_COUNT_ACTION">
+          <language>bean</language>
+          <body>minLimitCountAction</body>
+        </entry>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_arMfkFl-Ee-hWLMPTtNMZw" name="COMPLETE_ORDER">
+        <entry xmi:type="uml:OpaqueBehavior" xmi:id="_gKjOgFoeEe-hWLMPTtNMZw" name="COMPLETE_ORDER_ACTION">
+          <language>bean</language>
+          <body>completeOrderAction</body>
+        </entry>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_c5VyIFl-Ee-hWLMPTtNMZw" name="SEND_NOTIFICATION">
+        <entry xmi:type="uml:OpaqueBehavior" xmi:id="_irycMFoeEe-hWLMPTtNMZw" name="SEND_NOTIFICATION">
+          <language>bean</language>
+          <body>sendNotificationAction</body>
+        </entry>
+      </subvertex>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_iDOdEFl-Ee-hWLMPTtNMZw" name="FINAL"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_aaYxgFmAEe-hWLMPTtNMZw" kind="choice"/>
+    </region>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_n2aG8FoeEe-hWLMPTtNMZw" name="START_EVENT" signal="_VJIP0FobEe-hWLMPTtNMZw"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_sbxIgFoeEe-hWLMPTtNMZw" name="GO_TO_PAYMENT_EVENT" signal="_YcNxMFobEe-hWLMPTtNMZw"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_zEqvIFoeEe-hWLMPTtNMZw" name="COMPLATE_EVENT" signal="_cGK6cFobEe-hWLMPTtNMZw"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_2ABtAFoeEe-hWLMPTtNMZw" name="EXCEPTION_OCCURRED_EVENT" signal="_jxShIFodEe-hWLMPTtNMZw"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_l5lEgFo3Ee-hWLMPTtNMZw" name="ORDER_EVENT" signal="_kUVlAFo3Ee-hWLMPTtNMZw"/>
+</uml:Model>

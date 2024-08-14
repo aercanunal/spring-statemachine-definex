@@ -20,7 +20,7 @@ public final class StateMachineManager {
 
     public static void sendEvent(StateMachine<String, String> stateMachine, String payload, Map<String,Object> dataMap) {
         Message<String> message = MessageBuilder.withPayload(payload)
-                .setHeader("data", dataMap)
+                .copyHeaders(dataMap)
                 .build();
 
         sendEvent(stateMachine, message);
